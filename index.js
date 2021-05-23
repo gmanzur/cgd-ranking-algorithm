@@ -1,3 +1,3 @@
 const algorithm = require('./algorithm');
 
-console.log(algorithm.calculate(2000,2000,1));
+console.log(algorithm.calculate(-900,800,1));
