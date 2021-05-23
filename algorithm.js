@@ -31,18 +31,18 @@ const calculate = (player, opponent, result) => {
   console.log(`Bradley Terry: ${bradleyTerry(player, opponent)}`);
   console.log(`Mapping function for player: ${mappingFunction(player)}`);
   console.log(`Mapping function for opponent: ${mappingFunction(opponent)}`);
-  return `Final rank is: ${newRank}`;
+  return `New rank is: ${newRank}`;
 };
 
 // con
 const volatility = (rank) => pow((3300 - rank) / 200, 1.6);
 
 // Bonus
-const bonus = (rank) => log(1 + E * ((2300 - rank) / 80)) / 5;
+const bonus = (rank) => log(1 + pow(E, (2300 - rank) / 80)) / 5;
 
-// Se
+// Ses
 const bradleyTerry = (player, opponent) =>
-  1 / (1 + E * (mappingFunction(opponent) - mappingFunction(player)));
+  1 / (1 + pow(E, mappingFunction(opponent) - mappingFunction(player)));
 
 const mappingFunction = (rank) => -7 * log(3300 - rank);
 
